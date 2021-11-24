@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1 
 kind: Ingress 
 metadata: 
-  name: haproxy
+  name: testwebserver-ingress
   annotations: 
     ingress.class: "haproxy" 
     ingress.kubernetes.io/ssl-redirect: "true" 
