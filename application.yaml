@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/RobinMilissenPXL/Argocd-testapp.git
     targetRevision: HEAD
-    path: cicd/argocd/dev
+    path: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: testwebservice
