@@ -1,1 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testwebservice-argo-application
+  namespace: pipeline
+spec:
+  project: default
 
+  source:
+    repoURL: https://github.com/RobinMilissenPXL/Argocd-testapp.git
+    targetRevision: HEAD
+    path: cicd/argocd/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: testwebservice
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
