@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simplewebservice
+  name: testwebservice
 spec:
   selector:
     matchLabels:
-      app: simplewebservice
+      app: testwebservice
   replicas: 3
   template:
     metadata:
       labels:
-        app: simplewebservice
+        app: testwebservice
     spec:
       containers:
-        - name: simplewebservice
-          image: tomcoolpxl/simplewebservice:0.0.3-SNAPSHOT
+        - name: testwebservice
+          image: milissenrobin/milissenrobinpxl:calculator-app
           ports:
             - containerPort: 8080
