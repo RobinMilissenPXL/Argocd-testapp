@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1 
+kind: Ingress 
+metadata: 
+  name: haproxy 
+  annotations: 
+    ingress.class: "haproxy" 
+    ingress.kubernetes.io/ssl-redirect: "true" 
+spec: 
+  rules: 
+  - host: calculator.10.128.19.150.nip.io # nip.io is used as private dns resolver. 
+    http: 
+      paths: 
+      - path: / 
+        pathType: Prefix 
+        backend: 
+          service: 
+            name: testwebserver 
+            port: 
+              number: 80 
