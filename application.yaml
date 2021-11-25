@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/systemsexpert-pxl/selabs.git
     targetRevision: HEAD
-    path: cicd/argocd/dev
+    path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: simplewebservice
+    namespace: default
 
   syncPolicy:
     syncOptions:
