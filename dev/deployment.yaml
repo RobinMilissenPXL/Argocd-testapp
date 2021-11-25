@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: testwebservice
+  name: echoserver
+  labels:
+    app: echoserver
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: testwebservice
-  replicas: 3
+      app: echoserver
   template:
     metadata:
       labels:
-        app: testwebservice
+        app: echoserver
     spec:
       containers:
-        - name: testwebservice
-          image: milissenrobin/milissenrobinpxl:calculator-app
-          ports:
-            - containerPort: 8080
+      - name: echoserver
+        image: gcr.io/google_containers/echoserver:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
