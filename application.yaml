@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: simplewebservice-argo-application
-  namespace: simplewebservice
+  namespace: pipeline
 spec:
   project: default
   source:
