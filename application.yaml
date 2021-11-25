@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/systemsexpert-pxl/selabs.git
+    repoURL: https://github.com/RobinMilissenPXL/Argocd-testapp.git
     targetRevision: HEAD
     path: dev
   destination:
